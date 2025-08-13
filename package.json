@@ -1,0 +1,58 @@
+{
+  "name": "@ts-acl/core",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Comprehensive Access Control List library for Node.js applications with first-class TypeScript support",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist coverage"
+  },
+  "keywords": [
+    "acl",
+    "access-control",
+    "authorization",
+    "rbac",
+    "permissions",
+    "nodejs",
+    "typescript",
+    "mongodb",
+    "mongoose"
+  ],
+  "author": "Wojciech Brodecki",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WojciechBrodecki/ts-acl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WojciechBrodecki/ts-acl/issues"
+  },
+  "homepage": "https://github.com/WojciechBrodecki/ts-acl#readme",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.2.1",
+    "@typescript-eslint/eslint-plugin": "^8.39.1",
+    "@typescript-eslint/parser": "^8.39.1",
+    "eslint": "^9.33.0",
+    "jest": "^30.0.5",
+    "nodemon": "^3.1.10",
+    "ts-jest": "^29.4.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.2"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.3",
+    "express": "^5.1.0",
+    "mongoose": "^8.17.1"
+  }
+}
