@@ -14,9 +14,7 @@
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
     "type-check": "tsc --noEmit",
-    "clean": "rm -rf dist coverage",
-    "semantic-release": "semantic-release",
-    "prepare": "husky install"
+    "clean": "rm -rf dist coverage"
   },
   "keywords": [
     "acl",
