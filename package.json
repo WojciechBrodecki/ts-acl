@@ -14,7 +14,9 @@
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
     "type-check": "tsc --noEmit",
-    "clean": "rm -rf dist coverage"
+    "clean": "rm -rf dist coverage",
+    "semantic-release": "semantic-release",
+    "prepare": "husky install"
   },
   "keywords": [
     "acl",
@@ -38,13 +40,21 @@
   },
   "homepage": "https://github.com/WojciechBrodecki/ts-acl#readme",
   "devDependencies": {
+    "@commitlint/cli": "^19.4.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@eslint/js": "^9.33.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.2.1",
     "@typescript-eslint/eslint-plugin": "^8.39.1",
     "@typescript-eslint/parser": "^8.39.1",
+    "audit-ci": "^7.1.0",
     "eslint": "^9.33.0",
+    "husky": "^9.1.4",
     "jest": "^30.0.5",
     "nodemon": "^3.1.10",
+    "semantic-release": "^24.0.0",
     "ts-jest": "^29.4.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2",

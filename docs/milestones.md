@@ -6,10 +6,10 @@
 - [ ] **Project Setup**
   - [x] Repository initialization
   - [x] TypeScript configuration
-  - [ ] ESLint + Prettier setup
-  - [ ] Jest testing framework
-  - [ ] GitHub Actions CI/CD
-  - [ ] Conventional commits + semantic release
+  - [x] ESLint setup
+  - [x] Jest testing framework
+  - [x] GitHub Actions CI/CD
+  - [x] Conventional commits + semantic release
 
 - [ ] **Core Models & Schemas**
   - [ ] Mongoose connection setup
