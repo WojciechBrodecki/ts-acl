@@ -6,7 +6,6 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
     "dev": "tsc --watch",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -20,11 +19,9 @@
     "acl",
     "access-control",
     "authorization",
-    "rbac",
     "permissions",
     "nodejs",
     "typescript",
-    "mongodb",
     "mongoose"
   ],
   "author": "Wojciech Brodecki",
