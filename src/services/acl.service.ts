@@ -145,7 +145,7 @@ class ACLService implements IACLService {
   }
 
   public async getUserPermissions(userId: string): Promise<IServicePermission[]> {
-    const cacheKey = this.getCacheKey('user-permissions', userId);
+    const cacheKey = this.getCacheKey('user-role-permissions', userId);
 
     if (this.config.cacheEnabled) {
       const cached = this.cache.get<IServicePermission[]>(cacheKey);
@@ -213,8 +213,10 @@ class ACLService implements IACLService {
   public async clearUserCache(userId: string): Promise<void> {
     if (!this.config.cacheEnabled) return;
 
-  this.cache.deleteByPrefix(`user-${userId}`);
-  this.cache.deleteByPrefix(`permission-${userId}`); // kept for backward compatibility with existing keys
+    // Clear user-specific cache entries (roles and computed permissions)
+    this.cache.deleteByPrefix(`user-roles-${userId}`);
+    this.cache.deleteByPrefix(`user-role-permissions-${userId}`);
+    this.cache.deleteByPrefix(`permission-${userId}`); // for permission evaluation cache
   }
 
   public async clearCache(): Promise<void> {
