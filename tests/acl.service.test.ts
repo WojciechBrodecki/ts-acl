@@ -13,7 +13,7 @@ describe('ACLService', () => {
   });
 
   describe('Permission Evaluation (role-only)', () => {
-    it('powinno nadawać uprawnienia poprzez rolę', async () => {
+  it('should grant permissions via role', async () => {
       const userId = 'user1';
       const context: IPermissionContext = { userId, action: PermissionAction.READ };
       await aclService.assignRole(userId, 'user'); // role has read-all
@@ -23,14 +23,14 @@ describe('ACLService', () => {
       expect(result.appliedRoles).toContain('user');
     });
 
-    it('powinno odmówić jeśli użytkownik nie ma roli z uprawnieniem', async () => {
+  it('should deny if user does not have a role with the permission', async () => {
       const context: IPermissionContext = { userId: 'user1', action: PermissionAction.DELETE };
       const result = await aclService.checkPermission(context);
       expect(result.granted).toBe(false);
       expect(result.reason).toContain('No matching permission');
     });
 
-    it('rola admin powinna dawać ALL na każdą akcję', async () => {
+  it('admin role should grant ALL for any action', async () => {
       const userId = 'user1';
       await aclService.assignRole(userId, 'admin');
       const canRead = await aclService.hasPermission({ userId, action: PermissionAction.READ });
@@ -118,7 +118,7 @@ describe('ACLService', () => {
   });
 
   describe('Role Expiration', () => {
-    it('powinno respektować wygaśnięcie roli', async () => {
+    it('should respect role expiration', async () => {
       const userId = 'user1';
       const expiredDate = new Date(Date.now() - 1000);
       await aclService.assignRole(userId, 'admin', { expiresAt: expiredDate });
